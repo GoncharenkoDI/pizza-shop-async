@@ -1,0 +1,6 @@
+asyncpg
+aiohttp
+python-dotenv
+black
+ruff
+pytest
