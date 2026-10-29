@@ -48,8 +48,8 @@ clean-all: clean
 # Docker command
 DOCKER_NETWORK=pizza_shop_network
 
-POSTGRES_VOLUME=postgres_data
-POSTGRES_CONTAINER=postgres_18
+POSTGRES_VOLUME=postgres_data_a
+POSTGRES_CONTAINER=postgres_18_a
 
 BOT_CONTAINER=pizza_shop
 BOT_IMAGE=goncharenkodi/pizza_shop
