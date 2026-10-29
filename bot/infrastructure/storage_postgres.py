@@ -23,7 +23,7 @@ class StoragePostgres(Storage):
         self._pool: asyncpg.Pool | None = None
 
     async def _get_pool(self):
-        if self._get_pool is None:
+        if self._pool is None:
             host = os.getenv("POSTGRES_HOST")
             port = os.getenv("POSTGRES_PORT")
             user = os.getenv("POSTGRES_USER")
@@ -49,7 +49,7 @@ class StoragePostgres(Storage):
                 min_size=25,
                 max_size=25,
             )
-        return self._get_pool
+        return self._pool
 
     async def close(self):
         if self._pool:
