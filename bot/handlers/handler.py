@@ -20,7 +20,7 @@ class Handler(ABC):
     ) -> bool: ...
 
     @abstractmethod
-    def handle(
+    async def handle(
         self,
         update: dict,
         state: str,
