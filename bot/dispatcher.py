@@ -25,7 +25,7 @@ class Dispatcher:
         for handle in handlers:
             self._handlers.append(handle)
 
-    def _get_telegram_id_from_update(self, update: dict) -> int:
+    def _get_telegram_id_from_update(self, update: dict) -> int | None:
         if "message" in update:
             return update["message"]["from"]["id"]
         if "callback_query" in update:
