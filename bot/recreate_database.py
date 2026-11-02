@@ -6,7 +6,11 @@ from bot.infrastructure.storage_postgres import StoragePostgres
 
 async def main():
     storage: Storage = StoragePostgres()
-    await storage.recreate_database()
+    try:
+        await storage.recreate_database()
+    finally:
+        if hasattr(storage, "close"):
+            await storage.close()
 
 
 asyncio.run(main())
