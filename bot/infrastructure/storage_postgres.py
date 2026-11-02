@@ -229,7 +229,7 @@ class StoragePostgres(Storage):
             logger.error(f"[DB] - {method_name} - failed - {duration_ms:.2f}ms")
             raise
 
-    async def get_user(self, telegram_id: int) -> dict:
+    async def get_user(self, telegram_id: int) -> dict | None:
         """
         Get complete user object from table users by telegram_id
         {id, telegram_id, created_at, state, order_json}
