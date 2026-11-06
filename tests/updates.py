@@ -2130,3 +2130,11 @@ def get_telegram_id_from_update(update: dict) -> int | None:
     if "callback_query" in update:
         return update["callback_query"]["from"]["id"]
     return None
+
+
+def get_chat_id_from_update(update: dict) -> int | None:
+    if "message" in update:
+        return update["message"]["from"]["id"]
+    if "callback_query" in update:
+        return update["callback_query"]["from"]["id"]
+    return None
