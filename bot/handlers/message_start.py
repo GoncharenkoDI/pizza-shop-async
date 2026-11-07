@@ -1,7 +1,7 @@
 import json
 
 from bot.domain.messenger import Messenger
-from bot.domain.shop_menu import MENU_WAIT_FOR_GOOD_TYPE, build_inline_keyboard
+from bot.domain.shop_menu import MENU_WAIT_FOR_GOOD_TYPE, States, build_inline_keyboard
 from bot.domain.storage import Storage
 from bot.handlers.handler import Handler, HandlerStatus
 
@@ -30,7 +30,7 @@ class MessageStart(Handler):
         telegram_id = update["message"]["from"]["id"]
         chat_id = update["message"]["chat"]["id"]
         await storage.clear_user_state(telegram_id)
-        await storage.update_user_state(telegram_id, "WAIT_FOR_GOOD_TYPE")
+        await storage.update_user_state(telegram_id, States.WAIT_FOR_GOOD_TYPE)
         await messenger.send_message(
             chat_id=chat_id,
             text="🍕 Вітаю в магазині PIZZA SHOP.\n",

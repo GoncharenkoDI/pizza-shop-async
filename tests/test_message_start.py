@@ -1,6 +1,7 @@
 import pytest
 
 from bot.dispatcher import Dispatcher
+from bot.domain.shop_menu import States
 from bot.handlers.message_start import MessageStart
 from tests.mock import Mock
 from tests.updates import get_chat_id_from_update, get_telegram_id_from_update, updates
@@ -30,7 +31,7 @@ async def test_message_start_execution():
         """Update user state in table users"""
         nonlocal current_telegram_id, update_user_state_called
         assert telegram_id == current_telegram_id
-        assert state == "WAIT_FOR_GOOD_TYPE"
+        assert state == States.WAIT_FOR_GOOD_TYPE
         update_user_state_called -= 1
 
     async def get_user(telegram_id: int) -> dict | None:

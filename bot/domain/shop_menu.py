@@ -1,3 +1,10 @@
+from enum import StrEnum
+
+
+class States(StrEnum):
+    WAIT_FOR_GOOD_TYPE = "wait_for_good_type"
+
+
 MENU_WAIT_FOR_GOOD_TYPE = {"pizza": "Піца", "drinks": "Напої", "cancel": "Відмова"}
 
 
