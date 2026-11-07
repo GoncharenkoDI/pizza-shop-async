@@ -207,7 +207,9 @@ class StoragePostgres(Storage):
             )
             raise
 
-    async def update_user_order_json(self, telegram_id: int, order_data: dict) -> None:
+    async def update_user_order_json(
+        self, telegram_id: int, order_data: list[dict]
+    ) -> None:
         """Update user state in table users"""
         sql = "UPDATE users SET order_json=$1 WHERE telegram_id = $2"
         start_time = time.time()

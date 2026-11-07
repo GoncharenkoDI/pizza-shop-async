@@ -28,7 +28,9 @@ class Storage(ABC):
         """Update user state in table users"""
 
     @abstractmethod
-    async def update_user_order_json(self, telegram_id: int, order_data: dict) -> None:
+    async def update_user_order_json(
+        self, telegram_id: int, order_data: list[dict]
+    ) -> None:
         """Update user state in table users"""
 
     @abstractmethod
