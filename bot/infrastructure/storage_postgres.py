@@ -86,6 +86,7 @@ class StoragePostgres(Storage):
                     (
                         id SERIAL PRIMARY KEY,
                         goods_type VARCHAR(10) NOT NULL,
+                        goods_type_label VARCHAR(10) NOT NULL,
                         goods_name VARCHAR(40) NOT NULL,
                         goods_label TEXT NOT NULL,
                         goods_size VARCHAR(10),

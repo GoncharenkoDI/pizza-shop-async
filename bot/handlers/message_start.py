@@ -1,7 +1,7 @@
 import json
 
 from bot.domain.messenger import Messenger
-from bot.domain.shop_menu import MENU_WAIT_FOR_GOOD_TYPE, States, build_inline_keyboard
+from bot.domain.shop_menu import menu_wait_for_good_type, States, build_inline_keyboard
 from bot.domain.storage import Storage
 from bot.handlers.handler import Handler, HandlerStatus
 
@@ -40,7 +40,7 @@ class MessageStart(Handler):
             chat_id=chat_id,
             text="Будь ласка. Оберіть тип товару, який ви хочете замовити.\n",
             reply_markup=json.dumps(
-                {"inline_keyboard": build_inline_keyboard(MENU_WAIT_FOR_GOOD_TYPE)}
+                {"inline_keyboard": build_inline_keyboard(menu_wait_for_good_type)}
             ),
         )
 

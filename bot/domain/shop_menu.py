@@ -1,11 +1,13 @@
 from enum import StrEnum
+from goods import get_good_types
 
 
 class States(StrEnum):
     WAIT_FOR_GOOD_TYPE = "wait_for_good_type"
 
 
-MENU_WAIT_FOR_GOOD_TYPE = {"pizza": "Піца", "drinks": "Напої", "cancel": "Відмова"}
+menu_wait_for_good_type = get_good_types()
+menu_wait_for_good_type["cancel"] = "Відмова"
 
 
 def build_inline_keyboard(menu: dict) -> list:
