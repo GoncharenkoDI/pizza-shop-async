@@ -10,8 +10,8 @@ class MessageStart(Handler):
     def can_handle(
         self,
         update: dict,
-        state: str,
-        order_data: dict,
+        state: str | None,
+        order_data: list[dict],
     ) -> bool:
         return (
             "message" in update
@@ -22,8 +22,8 @@ class MessageStart(Handler):
     async def handle(
         self,
         update: dict,
-        state: str,
-        order_data: dict,
+        state: str | None,
+        order_data: list[dict],
         storage: Storage,
         messenger: Messenger,
     ) -> HandlerStatus:

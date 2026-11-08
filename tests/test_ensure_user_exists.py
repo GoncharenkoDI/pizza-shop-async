@@ -10,6 +10,7 @@ from tests.updates import get_telegram_id_from_update, updates
 async def test_ensure_user_exits_execution():
 
     ensure_user_exists_called_count = 0
+    current_telegram_id = 0
     for update in updates:
         if "message" in update and "from" in update["message"]:
             ensure_user_exists_called_count += 1

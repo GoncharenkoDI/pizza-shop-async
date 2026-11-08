@@ -9,7 +9,9 @@ from tests.updates import get_chat_id_from_update, get_telegram_id_from_update, 
 
 @pytest.mark.asyncio
 async def test_message_start_execution():
-
+    current_chat_id = 0
+    current_telegram_id = 0
+    send_message_texts = []
     clear_user_state_called_count = 0
     update_user_state_called = 0
     for update in updates:
@@ -47,6 +49,7 @@ async def test_message_start_execution():
         nonlocal current_chat_id, send_message_texts
         assert chat_id == current_chat_id
         send_message_texts.append(text)
+        return {}
 
     mock_storage = Mock(
         {

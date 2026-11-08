@@ -1,5 +1,5 @@
 from enum import StrEnum
-from goods import get_good_types
+from bot.domain.goods import get_good_types
 
 
 class States(StrEnum):
@@ -11,7 +11,7 @@ menu_wait_for_good_type["cancel"] = "Відмова"
 
 
 def build_inline_keyboard(menu: dict) -> list:
-    result = []
+    result: list[list[dict]] = []
     Index = 0
     for key, value in menu.items():
         row, column = divmod(Index, 2)

@@ -9,7 +9,7 @@
 # goods_price INT,
 # created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 # }
-TEST_GOODS = [
+TEST_GOODS:list[tuple] = [
     ("pizza", "Піца", "margherita", "Маргарита", "size_small", "Маленька (25 см.)", 23000),
     ("pizza", "Піца", "margherita", "Маргарита", "size_medium", "Середня (30 см.)", 25000),
     ("pizza", "Піца", "margherita", "Маргарита", "size_large", "Велика (35 см.)", 27000),

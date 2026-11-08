@@ -8,7 +8,7 @@ from tests.updates import get_telegram_id_from_update, updates
 
 @pytest.mark.asyncio
 async def test_update_logger_execution():
-
+    current_telegram_id  = 0
     persist_update_called_count = 0
 
     async def persist_update(update: dict) -> None:

@@ -7,16 +7,16 @@ class UpdateLogger(Handler):
     def can_handle(
         self,
         update: dict,
-        state: str,
-        order_data: dict,
+        state: str | None,
+        order_data: list[dict],
     ) -> bool:
         return True
 
     async def handle(
         self,
         update: dict,
-        state: str,
-        order_data: dict,
+        state: str | None,
+        order_data: list[dict],
         storage: Storage,
         messenger: Messenger,
     ) -> HandlerStatus:

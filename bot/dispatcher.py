@@ -21,7 +21,7 @@ class Dispatcher:
         self._messenger: Messenger = messenger
         self._storage: Storage = storage
 
-    def add_handlers(self, *handlers: list[Handler]) -> None:
+    def add_handlers(self, *handlers: Handler) -> None:
         for handle in handlers:
             self._handlers.append(handle)
 

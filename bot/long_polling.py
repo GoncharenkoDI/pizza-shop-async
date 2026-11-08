@@ -10,7 +10,7 @@ load_dotenv(override=True)
 
 async def start_long_polling(dispatcher: Dispatcher, messenger: Messenger):
     next_update_offset = 0
-    timeout = int(os.getenv("LP_TIMEOUT"))
+    timeout = int(os.getenv("LP_TIMEOUT", "30"))
     while True:
         updates = await messenger.get_updates(timeout, offset=next_update_offset)
         for update in updates:

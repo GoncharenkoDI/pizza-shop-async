@@ -15,16 +15,16 @@ class Handler(ABC):
     def can_handle(
         self,
         update: dict,
-        state: str,
-        order_data: dict,
+        state: str | None,
+        order_data: list[dict],
     ) -> bool: ...
 
     @abstractmethod
     async def handle(
         self,
         update: dict,
-        state: str,
-        order_data: dict,
+        state: str | None,
+        order_data: list[dict],
         storage: Storage,
         messenger: Messenger,
     ) -> HandlerStatus: ...
