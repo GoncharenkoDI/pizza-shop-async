@@ -19,7 +19,7 @@ logging.basicConfig(
 
 
 class MessengerTelegram(Messenger):
-    def __init__(self):
+    def __init__(self) -> None:
         self._session: aiohttp.ClientSession | None = None
 
     def _get_telegram_base_uri(self) -> str:

@@ -4,7 +4,7 @@ from bot.domain.storage import Storage
 from bot.infrastructure.storage_postgres import StoragePostgres
 
 
-async def main():
+async def main() -> None:
     storage: Storage = StoragePostgres()
     try:
         await storage.recreate_database()

@@ -20,7 +20,7 @@ logging.basicConfig(
 
 
 class StoragePostgres(Storage):
-    def __init__(self):
+    def __init__(self) -> None:
         self._pool: asyncpg.Pool | None = None
 
     async def _get_pool(self):
