@@ -40,9 +40,9 @@ class Dispatcher:
             telegram_id = self._get_telegram_id_from_update(update)
             user = await self._storage.get_user(telegram_id) if telegram_id else None
             user_state = user.get("state") if user else None
-            user_order_json = user.get("order_json") if user else "{}"
+            user_order_json = user.get("order_json") if user else "[]"
             if user_order_json is None:
-                user_order_json = "{}"
+                user_order_json = "[]"
             user_order_data = json.loads(user_order_json)
 
             for handler in self._handlers:
