@@ -9,7 +9,7 @@ from bot.infrastructure.storage_postgres import StoragePostgres
 from bot.long_polling import start_long_polling
 
 
-async def main()-> None:
+async def main() -> None:
     messenger: Messenger = MessengerTelegram()
     storage: Storage = StoragePostgres()
     try:
